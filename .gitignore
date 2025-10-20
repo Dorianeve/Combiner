@@ -1,0 +1,21 @@
+# R-related
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# Ignore all CSV files (any folder)
+*.csv
+
+# Ignore all XLSX files (any folder)
+*.xlsx
+
+# Ignore config file
+config.yml
+
+# Diagnostics stuff
+# Ignore the folder "diagnostics data"
+**/diagnostics data/
+
+# Ignore the script output file "diagnostics.R" (anywhere in the repo)
+**/output diagnostics.R
