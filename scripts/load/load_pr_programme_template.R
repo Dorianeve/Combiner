@@ -203,6 +203,7 @@ df %<>%
   mutate(ExportDate = today())
 
 # Save output ----
+dir.create("data/arr/pr", recursive = TRUE, showWarnings = FALSE)
 write.csv(df, "data/arr/pr/pr_programme.csv", row.names = FALSE)
 
 rm(list = ls())

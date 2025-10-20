@@ -98,6 +98,7 @@ df %<>%
   ))
 
 ## Save ----
+dir.create("data/arr", recursive = TRUE, showWarnings = FALSE)
 write.csv(df, "data/arr/reports_tracker.csv", row.names = FALSE)
 
 rm(list = ls())

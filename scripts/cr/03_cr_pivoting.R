@@ -236,6 +236,7 @@ old_combiner <- read.csv("data/arr/cr/cr historical cleaned.csv", encoding = "UT
 cleanMnE <- bind_rows(cleanMnE, old_combiner)
 
 ### Save MnE version ----
+dir.create("data/arr/cr/cleaned", recursive = TRUE, showWarnings = FALSE)
 write.csv(cleanMnE, paste0("data/arr/cr/cleaned/", today(),"_cr cleaned.csv"), row.names = FALSE)
 # Save output (xlsx) ----
 write.xlsx(cleanMnE, file = "data/arr/cr/cleaned/cr_clean.xlsx", overwrite = TRUE)

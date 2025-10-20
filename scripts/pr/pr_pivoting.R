@@ -365,6 +365,7 @@ old_combiner <- old_combiner %>% mutate(across(everything(), as.character))
 clean <- bind_rows(clean, old_combiner)
 
 # Save output ----
+dir.create("data/arr/pr/cleaned", recursive = TRUE, showWarnings = FALSE)
 write.csv(clean, paste0("data/arr/pr/cleaned/", today(),"_pr cleaned.csv"), row.names = FALSE)
 
 rm(list = ls())

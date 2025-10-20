@@ -202,6 +202,7 @@ df %<>%
 
 
 ## Save ----
+dir.create("data/arr/rw", recursive = TRUE, showWarnings = FALSE)
 write.csv(df, "data/arr/rw/reporting_window.csv", row.names = FALSE)
 
 

@@ -76,6 +76,7 @@ df %<>% filter(Country != "Global" | Country != "Regional")
 
 
 ## Save ----
+dir.create("data/arr", recursive = TRUE, showWarnings = FALSE)
 write.csv(df, "data/arr/grants_db.csv", row.names = FALSE)
 
 

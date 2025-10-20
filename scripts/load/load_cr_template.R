@@ -243,6 +243,7 @@ df %<>%
   mutate(ExportDate = today())
 
 ## Save ----
+dir.create("data/arr/cr", recursive = TRUE, showWarnings = FALSE)
 write.csv(df, "data/arr/cr/cr source data.csv", row.names = FALSE)
 
 rm(list = ls())
