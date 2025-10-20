@@ -40,10 +40,6 @@ Program that extracts CR, PR, DCM and AF combiners for ECW.
     # Reports approval MnE (file urls and sheet names)
     report_approval = "C:/Users/XXXXXX/UNICEF/Education Cannot Wait - Grants Management/04 - Reports tracker/ARR24 MnE Reports approval.xlsx"
     report_approval_sheet = "MnE reports approval"
-
-    # KOBO credentials
-    username_kobo = "XXXXXXX@unicef.org"
-    password_kobo = "XXXXXXX" 
     ```
 
 ## Combiner structure
