@@ -19,3 +19,8 @@ config.yml
 
 # Ignore the script output file "diagnostics.R" (anywhere in the repo)
 **/output diagnostics.R
+
+# === EXCEPTIONS (files to include in Git) ===
+!data/arr/pr/utilities/pr_columns.csv
+!data/arr/pr/utilities/pr_columns_order.csv
+!data/arr/pr/utilities/pr_old_new_names.csv
