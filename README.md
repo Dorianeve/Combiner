@@ -30,6 +30,7 @@ Program that extracts CR, PR, DCM and AF combiners for ECW.
 
     # path to the old combiner file (recommended to put the file into # the working folder)
     old_cr_combiner = "data/arr/cr/XXXXX.csv"
+    old_pr_combiner = "data/arr/pr/XXXXX.csv"
 
     # Reports tracker link GM (file urls and sheet names)
     report_tracker =  "C:/Users/XXXXXX/UNICEF/Education Cannot Wait - Grants Management/04 - Reports tracker/ECW Reports Tracker.xlsx"
