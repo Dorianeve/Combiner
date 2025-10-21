@@ -57,6 +57,7 @@ df %<>%
          Emergency_Other = ifelse(grepl("Other", Typeofemergency, ignore.case = TRUE), "Yes", "No"))
 
 # Save output ----
+dir.create("data/finance combiner", recursive = TRUE, showWarnings = FALSE)
 write.csv(df, "data/finance combiner/grants_db finance.csv", row.names = FALSE)
 
 rm(list = ls())

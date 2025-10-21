@@ -261,6 +261,11 @@ df <- final_results_df
 df %<>%
   filter(!is.na(grantee_lead_grn))
 
+## Get LeadGRN form GRID ----
+df %<>%
+  mutate(LeadGRN = str_split(grid, "\\|") %>% map_chr(~ str_trim(.x[5])))
+
+
 # NA cleaning
 # Count before cleaning
 empty_before <- sum(df == "" | str_trim(df) == " ", na.rm = TRUE)
@@ -278,15 +283,13 @@ empty_after <- sum(is.na(df))
 
 message("🧹 Cleaning complete. Empty values replaced with NA: ", empty_after - empty_before)
 
-## Get LeadGRN form GRID ----
-df %<>%
-  mutate(LeadGRN = str_split(grid, "\\|") %>% map_chr(~ str_trim(.x[5])))
 
 ## Specify Source of Data ----
 df %<>%
   mutate(source_of_data = "Finance Aligned Funding")
 
 ## Save output ----
+dir.create("data/finance combiner/aligned funding", recursive = TRUE, showWarnings = FALSE)
 write.csv(df, "data/finance combiner/aligned funding/af source data.csv", row.names = FALSE)
 
 rm(list = ls())

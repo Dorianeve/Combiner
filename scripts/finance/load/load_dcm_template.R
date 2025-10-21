@@ -507,6 +507,7 @@ consortium %<>%
 df <- bind_rows(sub_grantees, grantees, consortium)
 
 # Save output ----
+dir.create("data/finance combiner/dcm", recursive = TRUE, showWarnings = FALSE)
 write.csv(df, "data/finance combiner/dcm/dcm source data.csv", row.names = FALSE)
 
 rm(list = ls())

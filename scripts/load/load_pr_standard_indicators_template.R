@@ -169,6 +169,11 @@ final_results_df <- dplyr::bind_rows(cleaned_tables)
 
 df <- final_results_df
 
+## Get LeadGRN ----
+# From GRID
+df %<>%
+  mutate(LeadGRN = str_split(GRID, "\\|") %>% map_chr(~ str_trim(.x[5])))
+
 ## NA cleaning ----
 # Count before cleaning
 empty_before <- sum(df == "" | str_trim(df) == " ", na.rm = TRUE)
@@ -186,10 +191,8 @@ empty_after <- sum(is.na(df))
 
 message("🧹 Cleaning complete. Empty values replaced with NA: ", empty_after - empty_before)
 
-## Get LeadGRN ----
-# From GRID
-df %<>%
-  mutate(LeadGRN = str_split(GRID, "\\|") %>% map_chr(~ str_trim(.x[5])))
+
+
 
 ## Source of data ----
 df %<>%

@@ -26,4 +26,5 @@ names(df) <- gsub("\\s+", "", names(df))
 df %<>%
   filter(Typeofinvestment != "Total")
 
+dir.create("data/finance combiner", recursive = TRUE, showWarnings = FALSE)
 write.csv(df, "data/finance combiner/finance_db.csv", row.names = FALSE)

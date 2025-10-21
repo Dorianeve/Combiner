@@ -32,6 +32,8 @@ names(df) <- trimws(gsub("\\.", "", names(df)))
 names(df) <- gsub("\\s+", "", names(df))
 
 # Save output ----
+dir.create("data/finance combiner", recursive = TRUE, showWarnings = FALSE)
+
 write.csv(df, "data/finance combiner/expenditure_refund_db finance.csv", row.names = FALSE)
 
 rm(list = ls())

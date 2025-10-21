@@ -234,6 +234,7 @@ df %<>%
          cumulative_expenditure = as.numeric(cumulative_expenditure))          # Convert to numeric (float)
 
 # Save output ----
+dir.create("data/finance combiner/", recursive = TRUE, showWarnings = FALSE)
 write.csv(df, "data/finance combiner/finance_expenditure_overview.csv", row.names = FALSE)
 
 rm(list = ls())

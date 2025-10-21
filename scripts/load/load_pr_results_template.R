@@ -330,6 +330,12 @@ df %<>%
   select(-c(comments_rw1_2, comments_rw2_2, comments_rw3_2,
             comments_rw4_2, comments_rw5_2, comments_rw6_2, baseline_comments, target_comments))
 
+
+# Get LeadGRN ----
+df %<>%
+  mutate(LeadGRN = str_split(GRID, "\\|") %>% map_chr(~ str_trim(.x[5])))
+
+
 # NA cleaning ----
 # Count before cleaning
 empty_before <- sum(df == "" | str_trim(df) == " ", na.rm = TRUE)
@@ -347,11 +353,9 @@ empty_after <- sum(is.na(df))
 
 message("🧹 Cleaning complete. Empty values replaced with NA: ", empty_after - empty_before)
 
-## Get LeadGRN ----
-df %<>%
-  mutate(LeadGRN = str_split(GRID, "\\|") %>% map_chr(~ str_trim(.x[5])))
 
-## Source of data variable
+
+# Source of data variable ----
 df %<>%
   mutate(source_of_data = paste0("ARR", as.numeric(reporting_year) %% 100, " - RT"))
 
